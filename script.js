@@ -49,13 +49,17 @@ function ShowInfo(event) {
         gt = rdNu.nextElementSibling.textContent;
     }
 
-    var newStudent = { ten, ns, gt, cn };
+    if(ten && ns && gt && cn) {
+        var newStudent = { ten, ns, gt, cn };
 
-    studentList.push(newStudent);
-    RenderList();
-
-    document.getElementById('ten').value = '';
-    rdNam.checked = false;
-    rdNu.checked = false;
-    document.getElementById('dtpk').value = '';
+        studentList.push(newStudent);
+        RenderList();
+    
+        document.getElementById('ten').value = '';
+        rdNam.checked = false;
+        rdNu.checked = false;
+        document.getElementById('dtpk').value = '';
+    } else {
+        alert('Nhập đủ thông tin');
+    }
 }
